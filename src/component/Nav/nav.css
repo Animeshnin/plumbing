@@ -1,0 +1,40 @@
+.nav{
+    width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    color: #939393;
+    position: fixed;
+    height: 50px;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+
+}
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.left__text{
+    padding-left: 26px;
+}
+
+.telephone__icon{
+    width: 20px;
+    height: 20px;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.search__button{
+    padding: 10px;
+    border: 1px solid #494949;
+    color: #EC7133;
+    margin-left: 32px;
+}
