@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 694px;
 }
 
 .slider{
@@ -33,6 +34,7 @@
     position: absolute;
     left: 0;
     right: 0;
+    z-index: 0;
 }
 
 
@@ -67,6 +69,40 @@ details[open] summary::before {
     align-items: center;
 }
 
+.dropdown-header__spoiler{
+    padding-bottom: 24px;
+}
 
+.price{
+    padding: 15px 17px 11px 15px;
+    font-size: 24px;
+    background-color: #FE5B00;
+    color: #fff;
+    border: none;
+    position: relative;
+    top: 449px;
+    left: 229px;
+}
 
+.price::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #FE5B00; /* Orange outline */
+    z-index: 1;
+}
 
+.load__list{
+    display: flex;
+    gap: 10px;
+    padding-top: 128px;
+}
+
+.load__item{
+    content: '';
+    border: 2px solid #FE5B00; /* Orange outline */
+    width: 31px;
+}

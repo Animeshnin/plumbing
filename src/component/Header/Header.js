@@ -24,9 +24,16 @@ function Header(props) {
                                 <summary className="dropdown-header__title">О компании</summary>
                             </details>
                         </div>
+                        <div className={'load__list'}>
+                            <div className={'load__item'}></div>
+                            <div className={'load__item'}></div>
+                            <div className={'load__item'}></div>
+
+                        </div>
                     </div>
                     <div className="slider-image">
                         <img src={sliderImage1} alt=""/>
+                        <button className={'price'}>от 4990 ₽</button>
                     </div>
                 </div>
             </div>

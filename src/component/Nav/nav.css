@@ -5,6 +5,7 @@
     align-items: center;
     padding: 30px 40px;
     color: #939393;
+    z-index: 999;
     position: fixed;
     height: 50px;
     left: 0;

@@ -13,7 +13,57 @@ html {
 
 }
 
+.gray{
+    background-color: #F6F6F6;
+}
+
 .container{
     width: 1205px;
     margin: 0 auto;
 }
+.about{
+    font-size: 18px;
+    padding-block: 80px;
+}
+
+.orange{
+    color: #FE5B00;
+}
+
+.first-symbol{
+    font-size: 60px;
+}
+
+.about__text p:first-child::first-letter {
+    -webkit-initial-letter:2;
+    initial-letter:2;
+}
+
+.about__text p:last-child {
+    margin-top: 24px;
+}
+
+.about{
+    display: flex;
+    grid-gap:120px;
+}
+
+.about__production-item{
+    display: flex;
+    grid-gap: 29px;
+}
+
+.about__production-item:first-child{
+    margin-bottom: 32.5px;
+}
+
+.about__production-title{
+    font-size: 17px;
+    padding-bottom: 4px;
+}
+
+.about__production-text{
+    font-size: 15px;
+    color: #939393;
+}
+
