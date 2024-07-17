@@ -1,6 +1,4 @@
 .nav{
-    width: 1360px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     padding: 30px 40px;
@@ -9,10 +7,28 @@
     position: fixed;
     height: 50px;
     left: 0;
+
     right: 0;
+
+}
+
+
+.container__nav{
+    display: flex;
+    margin: 0 auto;
+    width: 1360px;
+    align-items: center;
     justify-content: space-between;
 
 }
+.active{
+    transition-property: background-color;
+    transition-duration: 0.4s ;
+    background-color: #222225;
+}
+
+
+
 
 .left{
     display: flex;
@@ -22,6 +38,44 @@
 .left__text{
     padding-left: 26px;
 }
+
+.nav__list{
+
+    display: flex;
+    margin-left: 36px;
+    grid-gap: 25px;
+    align-items: center;
+    text-align: center;
+}
+
+.nav__item:last-child:after{
+
+    content: url("../../assets/Vector2.svg");
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    transform: rotate(90deg);
+    color: #BEBEBE;
+    padding-left: 6px;
+    padding-bottom: 8px;
+
+}
+
+.nav__item{
+
+    display: flex;
+    align-items: center;
+}
+
+
+.nav__button.active__button{
+    transition-property: display;
+
+    display: none;
+    transition-duration: 0.4s ;
+}
+
+
 
 .telephone__icon{
     width: 20px;
@@ -33,9 +87,29 @@
     align-items: center;
 }
 
-.search__button{
+.nav__button{
+    display: flex;
+    align-items: center;
     padding: 10px;
     border: 1px solid #494949;
     color: #EC7133;
+    border-radius: 2px;
+    margin-left: 16px;
+}
+
+.nav__button.basket{
     margin-left: 32px;
+}
+
+
+.basket{
+    padding: 8px;
+}
+
+
+.basket__text{
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 600;
+
 }
