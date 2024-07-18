@@ -21,13 +21,20 @@
     justify-content: space-between;
 
 }
-.active{
-    transition-property: background-color;
-    transition-duration: 0.4s ;
-    background-color: #222225;
+.none{
+    display: none;
 }
 
+.nav2{
+    transform: translateY(-120px);
+    transition: transform .4s ;
+    background-color: #222f;
+}
 
+.active{
+    transform: translateY(0);
+    transition: transform .4s ;
+}
 
 
 .left{
@@ -37,6 +44,12 @@
 
 .left__text{
     padding-left: 26px;
+    opacity: 1;
+}
+
+.left__text.show{
+    opacity: 0;
+    display: none;
 }
 
 .nav__list{
@@ -47,6 +60,8 @@
     align-items: center;
     text-align: center;
 }
+
+
 
 .nav__item:last-child:after{
 
@@ -62,9 +77,13 @@
 }
 
 .nav__item{
-
     display: flex;
     align-items: center;
+
+}
+
+.nav__item.show{
+
 }
 
 
@@ -113,3 +132,4 @@
     font-weight: 600;
 
 }
+

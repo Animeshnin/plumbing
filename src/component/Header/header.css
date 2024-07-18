@@ -5,14 +5,16 @@
     background-size: cover;
     background-position: center;
     height: 694px;
+    position: relative;
 }
 
 .slider{
     display: flex;
     justify-content: space-between;
     color: #939393;
-    position: relative;
 }
+
+
 
 .slider-information__h1{
     font-family: "Roboto", sans-serif;
@@ -96,9 +98,10 @@ details[open] summary::before {
 }
 
 .load__list{
+    position: absolute;
     display: flex;
     gap: 10px;
-    padding-top: 128px;
+    bottom: 32px;
 }
 
 .load__item{
