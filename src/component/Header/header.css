@@ -22,7 +22,7 @@
     color: #fff;
     letter-spacing: 2px;
     font-size: 60px;
-    padding-top: 192px;
+    padding-top: 97px;
     width: 700px;
     line-height: 64px;
 }
@@ -36,6 +36,7 @@
     position: absolute;
     left: 0;
     right: 0;
+    top: -110px;
     z-index: 0;
 }
 
@@ -75,18 +76,22 @@ details[open] summary::before {
     padding-bottom: 24px;
 }
 
-.price{
+.button{
     padding: 15px 17px 11px 15px;
     font-size: 24px;
     background-color: #FE5B00;
     color: #fff;
     border: none;
+}
+
+.price{
+
     position: relative;
-    top: 449px;
+    top: 340px;
     left: 229px;
 }
 
-.price::before {
+.border::before {
     content: '';
     position: absolute;
     top: 4px;

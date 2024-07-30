@@ -4,6 +4,8 @@ import heart from './assets/heart.svg'
 import paper from './assets/paper.svg'
 import OunProduction from "./component/ounProduction/OunProduction";
 import ourProductionElement from './ournProductionElement'
+import oMebel from './assets/mirrorCabinetCommodity.png'
+import React from "react";
 function App() {
     console.log(ourProductionElement)
   return (
@@ -46,6 +48,70 @@ function App() {
             </div>
             <div className="container">
                <OunProduction ourProductionElement={ourProductionElement}/>
+            </div>
+            <div className="collection">
+                <div className="container">
+                    <div className={'collection-main'}>
+                        <div className={'collection__text'}>
+                            <div className="collection__title">
+                                <h1 className={'collection__title-h1'}>Коллекция</h1>
+                            </div>
+                            <div className="collection__description">
+                                <p className={'collection__description-text'}>Чувственность и элегантность, пуризм и
+                                    эксклюзивность, а может уют и романтичность? Наши коллекции, разработанные лучшими
+                                    дизайнерами отрасли, помогут создать вам именно ту атмосферу ванной комнаты, которую
+                                    вы
+                                    всегда искали.</p>
+                            </div>
+                            <details className={'dropdown-header__spoiler'}>
+                                <summary className="dropdown-header__title">О компании</summary>
+                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt id itaque iure nihil quae quam qui.</span>
+                                </p>
+                            </details>
+                        </div>
+                        <div className="collection__image">
+                            <div className={'collection__group'}>
+                                <h3 className={'collection__image-title'}>ARISTO</h3>
+                                <button className={'button'}>от 4990 р.</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div className="container">
+                <div className="promotionalGoods">
+                    <h1 className="promotionalGoods__title">Акционные товары</h1>
+                    <div className={'promotionalGoods__list'}>
+                        <div className={'promotionalGoods__item'}>
+                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
+                            <p
+                                className={' promotionalGoods__item-text '}>O-mebel зеркальный шкаф со светом Лотос</p>
+                            <p className={' promotionalGoods__item-price '}>5 990 ₽</p>
+                            <span className={'promotionalGoods__item-button button'}>-15%</span>
+                        </div>
+                        <div className={'promotionalGoods__item'}>
+                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
+                            <p
+                                className={'promotionalGoods__item-text'}>O-mebel зеркальный шкаф со светом Лотос</p>
+                            <p className={'promotionalGoods__item-price'}>5 990 ₽</p>
+                        </div>
+                        <div className={'promotionalGoods__item'}>
+                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
+                            <p
+                                className={'promotionalGoods__item-text'}>O-mebel зеркальный шкаф со светом Лотос</p>
+                            <p className={'promotionalGoods__item-price'}>5 990 ₽</p>
+                        </div>
+                        <div className={'promotionalGoods__item'}>
+                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
+                            <p
+                                className={'promotionalGoods__item-text'}>O-mebel зеркальный шкаф со светом Лотос</p>
+                            <p className={'promotionalGoods__item-price'}>5 990 ₽</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>

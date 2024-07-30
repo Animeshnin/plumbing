@@ -4,11 +4,11 @@
     padding: 30px 40px;
     color: #939393;
     z-index: 999;
-    position: fixed;
     height: 50px;
     left: 0;
-
+    position: sticky;
     right: 0;
+    transition:  0.2s;
 
 }
 
@@ -20,20 +20,6 @@
     align-items: center;
     justify-content: space-between;
 
-}
-.none{
-    display: none;
-}
-
-.nav2{
-    transform: translateY(-120px);
-    transition: transform .4s ;
-    background-color: #222f;
-}
-
-.active{
-    transform: translateY(0);
-    transition: transform .4s ;
 }
 
 
@@ -133,3 +119,32 @@
 
 }
 
+/* анимация header*/
+
+.nav__none{
+    transform: translateY(-200%);
+}
+
+.nav2{
+    animation-name: scroll;
+    background-color: #222f;
+    position: fixed;
+    transform: translateY(-200%);
+}
+
+@keyframes  scroll{
+    100% {
+        display: none;
+    }
+}
+
+.nav.active{
+    display: block;
+    position: fixed;
+    transform: translateY(0);
+    transition: 0.2s;
+}
+
+.container__nav.active{
+
+}

@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from "../Nav/Nav";
 import './header.css'
+import NewNav from "../Nav/NewNav";
 import sliderImage1 from '../../assets/Group 70.png'
-function Header(props) {
+function Header() {
     return (
         <header className={'header'}>
-            <Nav/>
+            <NewNav />
             <div className={'container'}>
                 <div className={'slider'}>
                     <div className="slider-information">
@@ -32,8 +32,8 @@ function Header(props) {
                         </div>
                     </div>
                     <div className="slider-image">
-                        <img src={sliderImage1} alt=""/>
-                        <button className={'price'}>от 4990 ₽</button>
+                        <img src={sliderImage1} alt="" />
+                        <button className={'button price border'}>от 4990 ₽</button>
                     </div>
                 </div>
             </div>
