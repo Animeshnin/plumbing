@@ -34,7 +34,7 @@
 
 .slider-image img{
     position: absolute;
-    left: 0;
+    left: -65px;
     right: 0;
     top: -110px;
     z-index: 0;
@@ -88,7 +88,7 @@ details[open] summary::before {
 
     position: relative;
     top: 340px;
-    left: 229px;
+    left: 169px;
 }
 
 .border::before {

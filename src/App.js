@@ -2,15 +2,25 @@ import Header from "./component/Header/Header";
 import './app.css'
 import heart from './assets/heart.svg'
 import paper from './assets/paper.svg'
+import collectionImage from './assets/collectionImage.png'
 import OunProduction from "./component/ounProduction/OunProduction";
+import CommodutyElement from "./component/commodutyElement/CommodutyElement"
 import ourProductionElement from './ournProductionElement'
+import winner from './assets/winner.svg'
+import refund from './assets/Refund.svg'
+import landing from './assets/Landing.svg'
+import commodityElement from './commodityElement'
 import oMebel from './assets/mirrorCabinetCommodity.png'
+import backImage from './assets/footerBackImage.png'
 import React from "react";
+import Dropdown from "./component/Dropdown/Dropdown";
+import Footer from "./component/footer/Footer";
 function App() {
     console.log(ourProductionElement)
   return (
     <div className="App">
       <Header/>
+      <Dropdown/>
         <main>
             <div className={'gray'}>
             <div className="container">
@@ -70,6 +80,7 @@ function App() {
                             </details>
                         </div>
                         <div className="collection__image">
+                            <img src={collectionImage}/>
                             <div className={'collection__group'}>
                                 <h3 className={'collection__image-title'}>ARISTO</h3>
                                 <button className={'button'}>от 4990 р.</button>
@@ -84,36 +95,60 @@ function App() {
                 <div className="promotionalGoods">
                     <h1 className="promotionalGoods__title">Акционные товары</h1>
                     <div className={'promotionalGoods__list'}>
-                        <div className={'promotionalGoods__item'}>
-                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
-                            <p
-                                className={' promotionalGoods__item-text '}>O-mebel зеркальный шкаф со светом Лотос</p>
-                            <p className={' promotionalGoods__item-price '}>5 990 ₽</p>
-                            <span className={'promotionalGoods__item-button button'}>-15%</span>
-                        </div>
-                        <div className={'promotionalGoods__item'}>
-                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
-                            <p
-                                className={'promotionalGoods__item-text'}>O-mebel зеркальный шкаф со светом Лотос</p>
-                            <p className={'promotionalGoods__item-price'}>5 990 ₽</p>
-                        </div>
-                        <div className={'promotionalGoods__item'}>
-                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
-                            <p
-                                className={'promotionalGoods__item-text'}>O-mebel зеркальный шкаф со светом Лотос</p>
-                            <p className={'promotionalGoods__item-price'}>5 990 ₽</p>
-                        </div>
-                        <div className={'promotionalGoods__item'}>
-                            <img className={'promotionalGoods__item-image'} src={oMebel} alt=""/>
-                            <p
-                                className={'promotionalGoods__item-text'}>O-mebel зеркальный шкаф со светом Лотос</p>
-                            <p className={'promotionalGoods__item-price'}>5 990 ₽</p>
-                        </div>
+                        {commodityElement.map(({brand, name, price, discount, image}) => (
+                            <CommodutyElement brand={brand} name={name} price={price} discount={discount} image={image}/>
+                        ))}
                     </div>
                 </div>
 
             </div>
+            <div className="container">
+                <div className="advantages">
+                    <h1 className="advantages__title">Наши преимущества</h1>
+                    <ul className="advantages__list">
+                        <li className="advantages__item">
+                            <div className="advantages__item-centered dvesti">
+                                <div className="advantages__img">
+                                    <img src={refund}/>
+                                </div>
+                                <h3>Бесплатный возврат</h3>
+                            </div>
+                            <span className="text-align-centered">Если товар вам не подходит, вы можете верунть его в течении 30 дней.</span>
+
+                        </li>
+                        <li className="advantages__item">
+                        <div className="advantages__item-centered">
+                                <div className="advantages__img">
+                                    <img src={winner}/>
+                                </div>
+                                <h3>Гарантия 10 лет</h3>
+                            </div>
+                            <span className="text-align-centered dvestiVosem">Стандарты ISO9001 и двойной контроль качества гарантируют долгосрочную безупречную работу изделий.</span>
+
+                        </li>
+                        <li className="advantages__item">
+                            <div className="advantages__item-centered">
+                                <div className="advantages__img">
+                                    <img src={landing}/>
+                                </div>
+                                <h3>Бесплатный возврат</h3>
+                            </div>
+                            <span className="text-align-centered dvesti">Банковской картой или наличными при получении.</span>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className="backImage">
+                    <img className="backImage-image" src={backImage}/>
+                <div className="overlay">
+                    <p className="backImage-text">ORANGE – это строгий, тщательно продуманный дизайн и подлинные немецкие традиции.</p>
+
+                </div>
+
+            </div>
         </main>
+        <Footer/>
     </div>
   );
 }

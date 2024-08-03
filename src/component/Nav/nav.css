@@ -47,19 +47,35 @@
     text-align: center;
 }
 
+.nav__item:last-child{
+    cursor: pointer;
+
+}
 
 
 .nav__item:last-child:after{
 
-    content: url("../../assets/Vector2.svg");
+    content: url("../../assets/Vector2.svg") ;
     display: inline-block;
     align-items: center;
     text-align: center;
     transform: rotate(90deg);
     color: #BEBEBE;
     padding-left: 6px;
+    transition: transform .3s;
+    cursor: pointer;
+
     padding-bottom: 8px;
 
+}
+
+.nav__item.close::after{
+    
+
+    transform: rotate(-90deg);
+    fill: #fff;
+    padding-right: 6px;
+    padding-top : 8px;
 }
 
 .nav__item{
@@ -68,10 +84,10 @@
 
 }
 
-.nav__item.show{
-
+.nav__item.close{
+    color: #fff;
+    transition: all .3s;
 }
-
 
 .nav__button.active__button{
     transition-property: display;

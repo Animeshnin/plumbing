@@ -1,0 +1,42 @@
+.promotionalGoods__item{
+    position: relative;
+    border: 1px solid #ECECEC;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.promotionalGoods__item-image{
+    margin: 24px  20px 20px;
+    object-fit: scale-down;
+}
+
+.promotionalGoods__item-text{
+    margin-inline: 20px;
+}
+
+.promotionalGoods__item-groupPrice{
+    margin: 34px 0 24px 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.promotionalGoods__item-price{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.promotionalGoods__item-button{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #FF7028;
+    font-size: 16px;
+    padding: 8px 11px;
+}
+
+.crosse{
+    text-decoration: line-through;
+    color: #848484;
+}

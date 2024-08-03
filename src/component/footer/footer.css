@@ -1,0 +1,79 @@
+.footer{
+    background-color: #202122;
+    position: relative;
+    top: -5px;
+    padding-top: 60px;
+}
+
+.footer__li{
+    display: flex;
+    align-items: center;
+}
+
+.footer__list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__link::before{
+    content: url('../../assets/footerVektor.svg');
+    transform: rotate(100deg);
+    padding-right: 12px;
+}
+
+.footer__ul{
+    color: #BEBEBE;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title__ul{
+    color: #fff;
+    font-weight: 600;
+}
+
+.orange.fz{
+    font-size: 20px;
+    padding-right: 8px;
+}
+
+.footer__container{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.footer__bottom{
+    padding-block: 56px 24px;
+    text-align: end;
+    width: 1205px;
+    margin: 0 auto;
+}
+
+.footer__bottom-text{
+    color: #747474;
+}
+
+.created{
+    padding: 8px 12px;
+    border: 1px solid #494949;
+    border-radius: 2px;
+    margin-left: 24px;
+}
+
+.footer__button-img{
+    border-top: 1px solid #2C2D2E;
+    cursor: pointer;
+}
+
+
+.footer__button-img > img{
+    width: 14px;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-block: 43px;
+    
+    transform: rotate(-90deg);
+}

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Logo from "../../assets/logo.png";
 import {GiSmartphone} from "react-icons/gi";
+import Dropdown from '../Dropdown/Dropdown';
 import {FaSearch, FaShoppingBasket, FaUser} from "react-icons/fa";
 import './nav.css'
 
@@ -9,17 +10,49 @@ function NewNav() {
     const [userScrolling,  setUserScrolling] = useState(false);
 
     useEffect(() => {
+        const handleClick = () => {
+            const modal = document.querySelector('.modal')
+            const openButton = document.querySelector('#open-modal-btn')
+            
+            if(modal.classList.contains('open')){
+                modal.classList.remove('open')
+                openButton.classList.remove('close')
+                console.log(`Удаление тега - ${modal.classList.contains('open') && !openButton.classList.contains('close')}`)
+            } else if (window.scrollY > 0) {
+                modal.classList.remove('open')
+                openButton.classList.remove('close')
+            }
+            
+            else {
+                modal.classList.add('open')
+                openButton.classList.add('close')
+                console.log('Добавление тега')
+            }
+        }
+    
+        const openButton = document.querySelector('#open-modal-btn')
+        openButton.addEventListener('click', handleClick)
+    
+        return () => {
+            openButton.removeEventListener('click', handleClick)
+        }
+    }, [])
+
+    useEffect(() => {
         const handleScroll = () => {
+            const modal = document.querySelector('.modal')
+            const openButton = document.querySelector('#open-modal-btn')
             const currentScrollY = window.scrollY;
             if (currentScrollY === 0) {
                 setUserScrolling(false);
             } else if (currentScrollY < scrollY) {
                 setUserScrolling(true);
-
+                modal.classList.remove('open')
+                openButton.classList.remove('close')
             }
             else {
                 // Пользователь прокручивает вниз
-                setUserScrolling(false);
+                setUserScrolling(false);    
             }
             setScrollY(currentScrollY);
         }
@@ -28,6 +61,8 @@ function NewNav() {
     }, [scrollY]);
     return (
         <>
+            <Dropdown/>
+
             <nav className={userScrolling ? "nav nav2 active" : "nav nav2 "}>
                 <div className={'container__nav'}>
                     <div className="left">
@@ -54,7 +89,11 @@ function NewNav() {
                         <ul className="nav__list">
                             <li className={"nav__item"}>О комнании</li>
                             <li className={"nav__item"}>О продукции</li>
-                            <li className={"nav__item"}>Каталог товаров</li>
+                            <li className={"nav__item"} id='open-modal-btn'>Каталог товаров
+            
+
+                            </li>
+
                         </ul>
                     </div>
                     <div className="right">
@@ -70,6 +109,7 @@ function NewNav() {
 
                     </div>
                 </div>
+
             </nav>
 
         </>
