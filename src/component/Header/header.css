@@ -82,6 +82,7 @@ details[open] summary::before {
     background-color: #FE5B00;
     color: #fff;
     border: none;
+    position: relative;
 }
 
 .price{

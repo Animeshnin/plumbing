@@ -6,10 +6,10 @@ import douche from '../../assets/douche.svg'
 import union from '../../assets/Union.svg'
 
 
-function Dropdown({}){
+function Dropdown({active, setActive, c}){
   return(
-    <div className='modal'>
-      <ul className='modal__list'>
+    <div className={`modal ${active? 'open close' : ''}`} onClick={()=> setActive(false)}>
+      <ul className='modal__list' onClick={e => e.stopPropagation()}>
         <li className='modal__item'>
           <img src={smesitely}/>
           <h3>Смесители</h3>

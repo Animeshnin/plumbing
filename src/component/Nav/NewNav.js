@@ -1,54 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import Logo from "../../assets/logo.png";
 import {GiSmartphone} from "react-icons/gi";
-import Dropdown from '../Dropdown/Dropdown';
 import {FaSearch, FaShoppingBasket, FaUser} from "react-icons/fa";
 import './nav.css'
+import Search from '../Search/Search';
+import Modal from '../Modal/Modal';
+import smesitely from '../../assets/smesitely.svg'
+import furniture from '../../assets/furniture.svg'
+import douche from '../../assets/douche.svg'
+import union from '../../assets/Union.svg'
 
 function NewNav() {
     const [scrollY, setScrollY] = useState(0);
     const [userScrolling,  setUserScrolling] = useState(false);
+    const [modalActive, setModalActive] = useState(false)
+    const [searchActive, setSearchActive] = useState(false)
 
-    useEffect(() => {
-        const handleClick = () => {
-            const modal = document.querySelector('.modal')
-            const openButton = document.querySelector('#open-modal-btn')
-            
-            if(modal.classList.contains('open')){
-                modal.classList.remove('open')
-                openButton.classList.remove('close')
-                console.log(`Удаление тега - ${modal.classList.contains('open') && !openButton.classList.contains('close')}`)
-            } else if (window.scrollY > 0) {
-                modal.classList.remove('open')
-                openButton.classList.remove('close')
-            }
-            
-            else {
-                modal.classList.add('open')
-                openButton.classList.add('close')
-                console.log('Добавление тега')
-            }
+    const closeAllModalsExcept = (activeModal) => {
+        if (activeModal === 'modal') {
+          setSearchActive(false);
+        } else if (activeModal === 'search') {
+          setModalActive(false);
         }
-    
-        const openButton = document.querySelector('#open-modal-btn')
-        openButton.addEventListener('click', handleClick)
-    
-        return () => {
-            openButton.removeEventListener('click', handleClick)
-        }
-    }, [])
+      };
 
     useEffect(() => {
         const handleScroll = () => {
-            const modal = document.querySelector('.modal')
-            const openButton = document.querySelector('#open-modal-btn')
             const currentScrollY = window.scrollY;
             if (currentScrollY === 0) {
                 setUserScrolling(false);
             } else if (currentScrollY < scrollY) {
+                setModalActive(false)
                 setUserScrolling(true);
-                modal.classList.remove('open')
-                openButton.classList.remove('close')
             }
             else {
                 // Пользователь прокручивает вниз
@@ -61,8 +44,33 @@ function NewNav() {
     }, [scrollY]);
     return (
         <>
-            <Dropdown/>
-
+            <Modal  active={modalActive} setActive={setModalActive}>
+            <ul className='modal__list' onClick={e => e.stopPropagation()}>
+                <li className='modal__item'>
+                    <img src={smesitely}/>
+                    <h3>Смесители</h3>
+                </li>
+                <li className='modal__item'>
+                    <img src={furniture}/>
+                    <h3>Мебель</h3>
+                </li>
+                <li className='modal__item'>
+                    <img src={douche}/>
+                    <h3>Душевая программа</h3>
+                </li>
+                    <li className='modal__item'>
+                    <img src={union}/>
+                    <h3>Фаянс</h3>
+                </li>
+            </ul>
+            </Modal>
+            <Modal active={searchActive} setActive={setSearchActive}>
+            <div className='modal__search'  onClick={e => e.stopPropagation()}>
+                <h3>Что вы ищете?</h3>
+                <input className='search' type='search' placeholder='Раковина для ванной комнаты...'/>
+                <button className='button border'>Search</button>
+            </div>
+            </Modal>
             <nav className={userScrolling ? "nav nav2 active" : "nav nav2 "}>
                 <div className={'container__nav'}>
                     <div className="left">
@@ -89,7 +97,7 @@ function NewNav() {
                         <ul className="nav__list">
                             <li className={"nav__item"}>О комнании</li>
                             <li className={"nav__item"}>О продукции</li>
-                            <li className={"nav__item"} id='open-modal-btn'>Каталог товаров
+                            <li className={`nav__item ${modalActive? 'close' : 'open'}`} onClick={()=> {setModalActive(!modalActive); closeAllModalsExcept('modal');}}>Каталог товаров
             
 
                             </li>
@@ -105,7 +113,7 @@ function NewNav() {
 
 
                         <FaUser className={'nav__button'}/>
-                        <FaSearch className={'nav__button'}/>
+                        <FaSearch id='open-modal-btn' className={'nav__button'} onClick={() => {setSearchActive(!searchActive);  closeAllModalsExcept('search')}}/>
 
                     </div>
                 </div>

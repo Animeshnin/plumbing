@@ -47,10 +47,6 @@
     text-align: center;
 }
 
-.nav__item:last-child{
-    cursor: pointer;
-
-}
 
 
 .nav__item:last-child:after{
@@ -79,6 +75,7 @@
 }
 
 .nav__item{
+    cursor: pointer;
     display: flex;
     align-items: center;
 
@@ -161,6 +158,34 @@
     transition: 0.2s;
 }
 
-.container__nav.active{
+.nav__button{
+    cursor: pointer;
+}
 
+.modal__search{
+    background-color: #fff;
+    color: black;
+    height: 121px;
+    text-align: center;
+    display: flex;
+    padding-inline: 56px;
+    align-items: center;
+}
+
+.modal__search > h3{
+    margin-right: 40px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.search{
+    padding: 16px;
+    margin-right: 16px;
+    outline: none;
+    width: 581px;
+    border: 1px solid #EC7133;
+}
+
+.search:focus{
+    box-shadow: 0px 0px 5px 2px #EC7133;
 }
